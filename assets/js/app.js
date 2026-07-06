@@ -57,34 +57,28 @@ const STORE_CONFIG = {
   ],
   galleryImages: [
     {
-      src: "assets/images/wine-cheese.png",
-      alt: "Botella Ciudad Evita con copa y tabla",
-      className: "gallery-item-feature",
-      objectPosition: "center 58%"
+      src: "assets/images/wine-pour-friends.png",
+      alt: "Servicio de vino Ciudad Evita en una mesa compartida",
+      className: "gallery-item-hero",
+      objectPosition: "center 56%"
     },
     {
       src: "assets/images/wine-label-detail.png",
       alt: "Detalle de la etiqueta del vino Ciudad Evita",
       className: "gallery-item-detail",
-      objectPosition: "center center"
+      objectPosition: "center 44%"
     },
     {
-      src: "assets/images/malbec-wood-dark.png",
-      alt: "Botella Ciudad Evita en una escena oscura y editorial",
-      className: "gallery-item-portrait",
-      objectPosition: "center 60%"
+      src: "assets/images/wine-cheese.png",
+      alt: "Botella Ciudad Evita con copa y tabla",
+      className: "gallery-item-table",
+      objectPosition: "center 56%"
     },
     {
-      src: "assets/images/wine-asado-closeup.png",
-      alt: "Botella Ciudad Evita con copa frente al asador",
-      className: "gallery-item-wide",
-      objectPosition: "center 52%"
-    },
-    {
-      src: "assets/images/wine-rack.png",
-      alt: "Botellas Ciudad Evita en una cava",
-      className: "gallery-item-cellar",
-      objectPosition: "center 46%"
+      src: "assets/images/wine-asado-gourmet.png",
+      alt: "Botella Ciudad Evita junto a una tabla de asado y una copa",
+      className: "gallery-item-asado",
+      objectPosition: "center 62%"
     }
   ]
 };
