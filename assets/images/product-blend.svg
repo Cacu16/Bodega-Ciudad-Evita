@@ -1,0 +1,18 @@
+<svg width="800" height="900" viewBox="0 0 800 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="900" fill="#F7F0E6"/>
+  <rect x="80" y="80" width="640" height="740" rx="34" fill="#EFE1CC"/>
+  <ellipse cx="400" cy="250" rx="170" ry="170" fill="#B48A4A" fill-opacity="0.16"/>
+  <path d="M334 134H466V262H334V134Z" fill="#181312"/>
+  <rect x="362" y="86" width="76" height="74" rx="24" fill="#181312"/>
+  <path d="M292 214C292 171.026 326.026 137 369 137H431C473.974 137 508 171.026 508 214V642H292V214Z" fill="#52212A"/>
+  <path d="M292 258H508V642H292V258Z" fill="#7D2030"/>
+  <path d="M320 334H480V568H320V334Z" fill="#F5EFE4"/>
+  <rect x="344" y="362" width="112" height="14" rx="7" fill="#B48A4A"/>
+  <rect x="332" y="394" width="136" height="12" rx="6" fill="#D4C1A4"/>
+  <rect x="344" y="420" width="112" height="12" rx="6" fill="#D4C1A4"/>
+  <rect x="330" y="446" width="140" height="12" rx="6" fill="#D4C1A4"/>
+  <path d="M400 486L424 526H376L400 486Z" fill="#52212A"/>
+  <circle cx="400" cy="440" r="16" fill="#52212A"/>
+  <path d="M270 642H530V686C530 705.882 513.882 722 494 722H306C286.118 722 270 705.882 270 686V642Z" fill="#181312"/>
+  <text x="400" y="780" text-anchor="middle" fill="#52111B" font-family="Georgia, serif" font-size="40" font-weight="700">Blend Signature</text>
+</svg>

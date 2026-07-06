@@ -1,0 +1,17 @@
+<svg width="800" height="900" viewBox="0 0 800 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="900" fill="#F8F1E8"/>
+  <rect x="80" y="80" width="640" height="740" rx="34" fill="#F0E4D1"/>
+  <ellipse cx="400" cy="250" rx="170" ry="170" fill="#52212A" fill-opacity="0.12"/>
+  <path d="M334 134H466V262H334V134Z" fill="#1A1515"/>
+  <rect x="362" y="86" width="76" height="74" rx="24" fill="#1A1515"/>
+  <path d="M292 214C292 171.026 326.026 137 369 137H431C473.974 137 508 171.026 508 214V642H292V214Z" fill="#4D131C"/>
+  <path d="M292 258H508V642H292V258Z" fill="#6F1D2A"/>
+  <path d="M320 334H480V568H320V334Z" fill="#181312"/>
+  <rect x="344" y="366" width="112" height="14" rx="7" fill="#E6DCCB"/>
+  <rect x="332" y="398" width="136" height="12" rx="6" fill="#E6DCCB"/>
+  <rect x="344" y="424" width="112" height="12" rx="6" fill="#E6DCCB"/>
+  <rect x="330" y="450" width="140" height="12" rx="6" fill="#E6DCCB"/>
+  <rect x="346" y="482" width="108" height="40" rx="20" fill="#B48A4A"/>
+  <path d="M270 642H530V686C530 705.882 513.882 722 494 722H306C286.118 722 270 705.882 270 686V642Z" fill="#181312"/>
+  <text x="400" y="780" text-anchor="middle" fill="#52111B" font-family="Georgia, serif" font-size="38" font-weight="700">Cabernet Sauvignon</text>
+</svg>

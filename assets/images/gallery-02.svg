@@ -1,0 +1,20 @@
+<svg width="900" height="700" viewBox="0 0 900 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="700" fill="#F0E4D2"/>
+  <ellipse cx="242" cy="130" rx="130" ry="130" fill="#B48A4A" fill-opacity="0.16"/>
+  <rect y="504" width="900" height="196" fill="#D8C0A4"/>
+  <rect x="170" y="190" width="130" height="250" rx="60" fill="#F5EFE4"/>
+  <path d="M198 420H272L246 522H224L198 420Z" fill="#F5EFE4"/>
+  <rect x="233" y="522" width="10" height="66" fill="#D4C1A4"/>
+  <rect x="196" y="588" width="88" height="22" rx="11" fill="#E6DCCB"/>
+  <path d="M198 216C198 189.49 219.49 168 246 168C272.51 168 294 189.49 294 216V332C268.438 348.217 223.562 348.217 198 332V216Z" fill="#E2C5C3"/>
+  <rect x="372" y="170" width="148" height="280" rx="68" fill="#F5EFE4"/>
+  <path d="M404 428H488L460 542H432L404 428Z" fill="#F5EFE4"/>
+  <rect x="455" y="542" width="10" height="66" fill="#D4C1A4"/>
+  <rect x="416" y="608" width="88" height="22" rx="11" fill="#E6DCCB"/>
+  <path d="M404 204C404 172.52 429.52 147 461 147C492.48 147 518 172.52 518 204V350C487.201 367.391 434.799 367.391 404 350V204Z" fill="#9F3540"/>
+  <rect x="608" y="190" width="130" height="250" rx="60" fill="#F5EFE4"/>
+  <path d="M636 420H710L684 522H662L636 420Z" fill="#F5EFE4"/>
+  <rect x="673" y="522" width="10" height="66" fill="#D4C1A4"/>
+  <rect x="636" y="588" width="88" height="22" rx="11" fill="#E6DCCB"/>
+  <path d="M636 216C636 189.49 657.49 168 684 168C710.51 168 732 189.49 732 216V332C706.438 348.217 661.562 348.217 636 332V216Z" fill="#7D2030"/>
+</svg>
