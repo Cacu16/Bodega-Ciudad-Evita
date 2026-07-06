@@ -58,19 +58,33 @@ const STORE_CONFIG = {
   galleryImages: [
     {
       src: "assets/images/wine-cheese.png",
-      alt: "Botella Ciudad Evita con copa y tabla"
+      alt: "Botella Ciudad Evita con copa y tabla",
+      className: "gallery-item-feature",
+      objectPosition: "center 58%"
     },
     {
       src: "assets/images/wine-label-detail.png",
-      alt: "Detalle de la etiqueta del vino Ciudad Evita"
+      alt: "Detalle de la etiqueta del vino Ciudad Evita",
+      className: "gallery-item-detail",
+      objectPosition: "center center"
     },
     {
       src: "assets/images/malbec-wood-dark.png",
-      alt: "Botella Ciudad Evita en una escena oscura y editorial"
+      alt: "Botella Ciudad Evita en una escena oscura y editorial",
+      className: "gallery-item-portrait",
+      objectPosition: "center 60%"
     },
     {
       src: "assets/images/wine-asado-closeup.png",
-      alt: "Botella Ciudad Evita con copa frente al asador"
+      alt: "Botella Ciudad Evita con copa frente al asador",
+      className: "gallery-item-wide",
+      objectPosition: "center 52%"
+    },
+    {
+      src: "assets/images/wine-rack.png",
+      alt: "Botellas Ciudad Evita en una cava",
+      className: "gallery-item-cellar",
+      objectPosition: "center 46%"
     }
   ]
 };
@@ -204,8 +218,13 @@ function renderGallery() {
   const galleryMarkup = STORE_CONFIG.galleryImages
     .map(
       (image) => `
-        <figure class="gallery-item reveal">
-          <img src="${image.src}" alt="${image.alt}" loading="lazy" />
+        <figure class="gallery-item ${image.className || ""} reveal">
+          <img
+            src="${image.src}"
+            alt="${image.alt}"
+            loading="lazy"
+            style="object-position: ${image.objectPosition || "center center"};"
+          />
         </figure>
       `
     )
