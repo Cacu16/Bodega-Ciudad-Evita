@@ -31,6 +31,7 @@ body {
   margin: 0;
   font-family: "Manrope", "Segoe UI", sans-serif;
   color: var(--ink);
+  overflow-x: hidden;
   background:
     radial-gradient(circle at top left, rgba(177, 140, 89, 0.1), transparent 24%),
     linear-gradient(180deg, #f6efe6 0%, #efe1cf 46%, #f8f1e8 100%);
@@ -187,6 +188,18 @@ code {
   text-transform: uppercase;
 }
 
+.menu,
+.hero-copy,
+.hero-aside,
+.section-head,
+.product-card,
+.pairing-card,
+.trade-shell,
+.testimonial-card,
+.cta-shell {
+  min-width: 0;
+}
+
 .menu a {
   position: relative;
 }
@@ -319,6 +332,10 @@ code {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 30px;
+}
+
+.hero-actions .button {
+  min-width: 220px;
 }
 
 .hero-aside {
@@ -695,6 +712,10 @@ code {
   box-shadow: var(--shadow-xl);
 }
 
+.trade-shell > .button {
+  justify-self: end;
+}
+
 .trade-copy p {
   color: rgba(253, 249, 243, 0.74);
 }
@@ -896,10 +917,28 @@ code {
     max-width: 480px;
   }
 
+  .trade-shell {
+    gap: 30px;
+  }
+
+  .trade-shell > .button {
+    justify-self: start;
+  }
+
   .product-grid,
   .pairings-grid,
   .testimonial-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1040px) {
+  .section-head-split {
+    grid-template-columns: 1fr;
+  }
+
+  .section-head-split p {
+    max-width: 680px;
   }
 }
 
@@ -915,6 +954,7 @@ code {
   }
 
   .menu {
+    width: 100%;
     justify-content: start;
     flex-wrap: wrap;
     gap: 12px 18px;
@@ -930,11 +970,23 @@ code {
   }
 
   .hero-content {
-    padding-top: 240px;
+    gap: 34px;
+    padding-top: 220px;
+    padding-bottom: 68px;
   }
 
   .hero-shell {
     min-height: auto;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    min-width: 0;
   }
 
   .gallery-item-hero,
@@ -960,10 +1012,45 @@ code {
   }
 }
 
+@media (max-width: 760px) {
+  .product-grid,
+  .pairings-grid,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-head {
+    margin-bottom: 30px;
+  }
+
+  .intro-figure,
+  .editorial-image {
+    min-height: 500px;
+  }
+}
+
 @media (max-width: 640px) {
   .brand-mark {
     width: 46px;
     height: 60px;
+  }
+
+  .brand {
+    gap: 12px;
+  }
+
+  .brand-copy strong {
+    font-size: 1.12rem;
+  }
+
+  .nav {
+    padding: 14px 16px;
+  }
+
+  .menu {
+    gap: 10px 14px;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
   }
 
   .hero-shell h1,
@@ -972,7 +1059,35 @@ code {
   .editorial-copy h2,
   .trade-copy h2,
   .cta-shell h2 {
-    font-size: 3.2rem;
+    font-size: 2.85rem;
+  }
+
+  .hero-shell h1 {
+    font-size: clamp(3.5rem, 14vw, 4.6rem);
+  }
+
+  .hero-content {
+    gap: 26px;
+    padding-top: 188px;
+    padding-bottom: 54px;
+  }
+
+  .hero-subtitle {
+    margin-top: 18px;
+    font-size: 1.06rem;
+  }
+
+  .hero-text {
+    font-size: 0.96rem;
+  }
+
+  .hero-aside > strong {
+    margin-top: 0;
+    font-size: 1.12rem;
+  }
+
+  .hero-aside-list strong {
+    font-size: 0.92rem;
   }
 
   .hero-actions .button,
@@ -991,6 +1106,44 @@ code {
     padding: 22px;
   }
 
+  .intro-panel {
+    padding: 64px 0 18px;
+  }
+
+  .intro-figure,
+  .editorial-image {
+    min-height: 420px;
+  }
+
+  .product-card-top,
+  .product-meta-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-name {
+    font-size: 2.45rem;
+  }
+
+  .product-option-copy strong {
+    font-size: 1.48rem;
+  }
+
+  .trade-shell {
+    padding: 24px;
+  }
+
+  .trade-points div {
+    padding: 16px;
+  }
+
+  .gallery-item-hero,
+  .gallery-item-detail,
+  .gallery-item-table,
+  .gallery-item-asado {
+    min-height: 300px;
+  }
+
   .editorial-strip,
   .selection-section,
   .pairings-section,
@@ -999,5 +1152,55 @@ code {
   .testimonials-section,
   .cta-section {
     padding: 82px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container: min(1280px, calc(100vw - 28px));
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+  }
+
+  .menu {
+    font-size: 0.68rem;
+  }
+
+  .hero-shell h1,
+  .intro-copy h2,
+  .section-head h2,
+  .editorial-copy h2,
+  .trade-copy h2,
+  .cta-shell h2 {
+    font-size: 2.45rem;
+  }
+
+  .hero-shell h1 {
+    font-size: clamp(3rem, 15vw, 4rem);
+  }
+
+  .hero-content {
+    padding-top: 172px;
+  }
+
+  .intro-copy,
+  .editorial-copy,
+  .pairing-card,
+  .trade-shell,
+  .product-card,
+  .testimonial-card,
+  .cta-shell,
+  .hero-aside {
+    padding: 18px;
+  }
+
+  .gallery-item-hero,
+  .gallery-item-detail,
+  .gallery-item-table,
+  .gallery-item-asado {
+    min-height: 260px;
   }
 }
