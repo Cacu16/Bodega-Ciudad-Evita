@@ -61,7 +61,18 @@
         <div class="container hero-content">
           <div class="hero-copy reveal">
             <p class="eyebrow">Ciudad Evita, Buenos Aires</p>
-            <h1>Bodega Ciudad Evita</h1>
+            <h1>
+              Bodega Ciudad
+              <span
+                class="secret-trigger"
+                id="secretAdminTrigger"
+                role="button"
+                tabindex="0"
+                aria-label="Abrir acceso administrativo oculto"
+              >
+                Evita
+              </span>
+            </h1>
             <p class="hero-subtitle">Vinos seleccionados para compartir buenos momentos</p>
             <p class="hero-text">
               Una propuesta local con imagen refinada, dos tintos bien presentados y una experiencia de disfrute
@@ -78,8 +89,8 @@
 
           <aside class="hero-aside reveal reveal-delay">
             <span class="hero-aside-kicker">Seleccion actual</span>
-            <strong>Malbec y Cabernet Sauvignon</strong>
-            <p>Publicaciones unitarias y formato caja x6 listas para vender por mensaje directo.</p>
+            <strong id="heroVarietalSummary">Malbec y Cabernet Sauvignon</strong>
+            <p id="heroSelectionText">Productos listos para vender por mensaje directo y atencion personalizada.</p>
           </aside>
         </div>
       </section>
@@ -150,7 +161,7 @@
           <article class="pairing-card pairing-card-dark reveal">
             <span>03</span>
             <h3>Formato comercial</h3>
-            <p>Publicaciones unitarias a $5.300 y cajas de 6 unidades a $31.800 para compras mas directas.</p>
+            <p id="commercialSummary">Presentaciones disponibles para compras directas y consultas mayoristas.</p>
           </article>
         </div>
       </section>
@@ -288,6 +299,126 @@
       </div>
     </footer>
 
+    <div class="admin-portal" id="adminPortal" hidden>
+      <div class="admin-backdrop" id="adminBackdrop"></div>
+
+      <section class="admin-modal" aria-modal="true" aria-labelledby="adminPanelTitle" role="dialog">
+        <div class="admin-login-view" id="adminLoginView">
+          <div class="admin-modal-head">
+            <p class="admin-kicker">Acceso privado</p>
+            <h2 id="adminPanelTitle">Panel de administracion</h2>
+            <button class="admin-close" id="adminCloseLogin" type="button" aria-label="Cerrar panel">
+              Cerrar
+            </button>
+          </div>
+
+          <p class="admin-copy">
+            Inicia sesion para editar precios, productos y enlaces comerciales de la pagina.
+          </p>
+
+          <form class="admin-login-form" id="adminLoginForm">
+            <label>
+              Usuario
+              <input id="adminUsername" name="username" type="text" autocomplete="username" required />
+            </label>
+
+            <label>
+              Clave
+              <input
+                id="adminPassword"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+              />
+            </label>
+
+            <button class="button button-primary" type="submit">Ingresar</button>
+          </form>
+
+          <p class="admin-feedback" id="adminLoginFeedback" aria-live="polite"></p>
+        </div>
+
+        <div class="admin-panel-view" id="adminPanelView" hidden>
+          <div class="admin-modal-head admin-modal-head-wide">
+            <div>
+              <p class="admin-kicker">Modo administrador</p>
+              <h2>Editar pagina</h2>
+            </div>
+
+            <div class="admin-toolbar">
+              <button class="button button-ghost admin-toolbar-button" id="adminLogout" type="button">
+                Cerrar sesion
+              </button>
+              <button class="admin-close" id="adminClosePanel" type="button" aria-label="Cerrar panel">
+                Cerrar
+              </button>
+            </div>
+          </div>
+
+          <div class="admin-panel-body">
+            <section class="admin-section">
+              <div class="admin-section-head">
+                <div>
+                  <p class="admin-kicker">Datos comerciales</p>
+                  <h3>Canales y mensajes</h3>
+                </div>
+              </div>
+
+              <div class="admin-settings-grid">
+                <label>
+                  WhatsApp
+                  <input id="adminWhatsappNumber" type="text" inputmode="numeric" />
+                </label>
+
+                <label>
+                  Instagram URL
+                  <input id="adminInstagramUrl" type="url" />
+                </label>
+
+                <label class="admin-field-wide">
+                  Mensaje principal
+                  <textarea id="adminDefaultWhatsappMessage" rows="3"></textarea>
+                </label>
+
+                <label class="admin-field-wide">
+                  Mensaje mayorista
+                  <textarea id="adminWholesaleWhatsappMessage" rows="3"></textarea>
+                </label>
+              </div>
+            </section>
+
+            <section class="admin-section">
+              <div class="admin-section-head">
+                <div>
+                  <p class="admin-kicker">Catalogo</p>
+                  <h3>Productos</h3>
+                </div>
+
+                <button class="button button-secondary admin-add-button" id="adminAddProduct" type="button">
+                  Agregar producto
+                </button>
+              </div>
+
+              <div class="admin-product-list" id="adminProductList"></div>
+            </section>
+          </div>
+
+          <div class="admin-panel-footer">
+            <p class="admin-feedback" id="adminStatus" aria-live="polite"></p>
+
+            <div class="admin-footer-actions">
+              <button class="button button-ghost admin-toolbar-button" id="adminRestoreDefaults" type="button">
+                Restaurar original
+              </button>
+              <button class="button button-primary" id="adminSaveChanges" type="button">
+                Guardar cambios
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
     <script src="assets/js/app.js"></script>
   </body>
 </html>
