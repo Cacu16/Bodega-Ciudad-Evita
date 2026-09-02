@@ -908,6 +908,11 @@ body.admin-open {
   padding: 24px;
 }
 
+/* Keep the admin modal invisible until the secret trigger opens it. */
+.admin-portal[hidden] {
+  display: none;
+}
+
 .admin-backdrop {
   position: absolute;
   inset: 0;
