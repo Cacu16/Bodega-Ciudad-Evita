@@ -1,7 +1,8 @@
 const DEFAULT_STORE_CONFIG = {
   businessName: "Bodega Ciudad Evita",
   whatsappNumber: "5491100000000",
-  instagramUrl: "https://www.instagram.com/bodegaciudadevita/",
+  instagramUrl: "https://www.instagram.com/bodega_ciudad_evita/",
+  contactEmail: "ciudadevitabodega@gmail.com",
   defaultWhatsappMessage: "Hola, quiero hacer un pedido de Bodega Ciudad Evita",
   wholesaleWhatsappMessage: "Hola, quiero consultar precios mayoristas de Bodega Ciudad Evita",
   products: [
@@ -101,6 +102,8 @@ const heroSelectionText = document.querySelector("#heroSelectionText");
 const commercialSummary = document.querySelector("#commercialSummary");
 const footerWhatsappTextLink = document.querySelector("#footerWhatsappTextLink");
 const footerInstagramLink = document.querySelector("#footerInstagramLink");
+const contactEmailLink = document.querySelector("#contactEmailLink");
+const footerEmailLink = document.querySelector("#footerEmailLink");
 const adminPortal = document.querySelector("#adminPortal");
 const adminBackdrop = document.querySelector("#adminBackdrop");
 const adminLoginView = document.querySelector("#adminLoginView");
@@ -111,6 +114,7 @@ const adminStatus = document.querySelector("#adminStatus");
 const adminProductList = document.querySelector("#adminProductList");
 const adminWhatsappNumber = document.querySelector("#adminWhatsappNumber");
 const adminInstagramUrl = document.querySelector("#adminInstagramUrl");
+const adminContactEmail = document.querySelector("#adminContactEmail");
 const adminDefaultWhatsappMessage = document.querySelector("#adminDefaultWhatsappMessage");
 const adminWholesaleWhatsappMessage = document.querySelector("#adminWholesaleWhatsappMessage");
 
@@ -202,11 +206,18 @@ function sanitizeGalleryImage(image) {
 }
 
 function sanitizeConfig(config) {
+  const savedInstagramUrl = String(config?.instagramUrl ?? "").trim();
+  const legacyInstagramUrl = "https://www.instagram.com/bodegaciudadevita/";
+
   return {
     businessName: DEFAULT_STORE_CONFIG.businessName,
     whatsappNumber:
       String(config?.whatsappNumber ?? "").replace(/\s+/g, "").trim() || DEFAULT_STORE_CONFIG.whatsappNumber,
-    instagramUrl: String(config?.instagramUrl ?? "").trim() || DEFAULT_STORE_CONFIG.instagramUrl,
+    instagramUrl:
+      savedInstagramUrl === legacyInstagramUrl
+        ? DEFAULT_STORE_CONFIG.instagramUrl
+        : savedInstagramUrl || DEFAULT_STORE_CONFIG.instagramUrl,
+    contactEmail: String(config?.contactEmail ?? "").trim() || DEFAULT_STORE_CONFIG.contactEmail,
     defaultWhatsappMessage:
       String(config?.defaultWhatsappMessage ?? "").trim() || DEFAULT_STORE_CONFIG.defaultWhatsappMessage,
     wholesaleWhatsappMessage:
@@ -363,6 +374,15 @@ function applyStoreCopy() {
     footerInstagramLink.rel = "noreferrer";
     footerInstagramLink.textContent = formatInstagramLabel(storeConfig.instagramUrl);
   }
+
+  [contactEmailLink, footerEmailLink].forEach((link) => {
+    if (!link) {
+      return;
+    }
+
+    link.href = `mailto:${storeConfig.contactEmail}`;
+    link.textContent = storeConfig.contactEmail;
+  });
 
   if (footerWhatsappTextLink) {
     footerWhatsappTextLink.textContent = `WhatsApp: ${formatWhatsappDisplay(storeConfig.whatsappNumber)}`;
@@ -638,6 +658,10 @@ function renderAdminPanel() {
     adminInstagramUrl.value = adminDraftConfig.instagramUrl;
   }
 
+  if (adminContactEmail) {
+    adminContactEmail.value = adminDraftConfig.contactEmail;
+  }
+
   if (adminDefaultWhatsappMessage) {
     adminDefaultWhatsappMessage.value = adminDraftConfig.defaultWhatsappMessage;
   }
@@ -863,6 +887,7 @@ function collectAdminDraftFromDom() {
     ...cloneConfig(adminDraftConfig),
     whatsappNumber: adminWhatsappNumber?.value ?? adminDraftConfig.whatsappNumber,
     instagramUrl: adminInstagramUrl?.value ?? adminDraftConfig.instagramUrl,
+    contactEmail: adminContactEmail?.value ?? adminDraftConfig.contactEmail,
     defaultWhatsappMessage: adminDefaultWhatsappMessage?.value ?? adminDraftConfig.defaultWhatsappMessage,
     wholesaleWhatsappMessage:
       adminWholesaleWhatsappMessage?.value ?? adminDraftConfig.wholesaleWhatsappMessage,
