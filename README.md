@@ -54,7 +54,7 @@ Todo eso se cambia en `assets/js/app.js`, dentro de la constante:
 
 ```js
 const STORE_CONFIG = {
-  whatsappNumber: "5491100000000",
+  whatsappNumber: "5491172635509",
   instagramUrl: "https://www.instagram.com/bodegaciudadevita/",
   defaultWhatsappMessage: "Hola, quiero hacer un pedido de Bodega Ciudad Evita",
   wholesaleWhatsappMessage: "Hola, quiero consultar precios mayoristas de Bodega Ciudad Evita",

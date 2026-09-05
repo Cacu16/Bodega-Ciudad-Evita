@@ -1,6 +1,6 @@
 const DEFAULT_STORE_CONFIG = {
   businessName: "Bodega Ciudad Evita",
-  whatsappNumber: "5491100000000",
+  whatsappNumber: "5491172635509",
   instagramUrl: "https://www.instagram.com/bodega_ciudad_evita/",
   contactEmail: "ciudadevitabodega@gmail.com",
   defaultWhatsappMessage: "Hola, quiero hacer un pedido de Bodega Ciudad Evita",
@@ -206,13 +206,16 @@ function sanitizeGalleryImage(image) {
 }
 
 function sanitizeConfig(config) {
+  const savedWhatsappNumber = String(config?.whatsappNumber ?? "").replace(/\D/g, "");
   const savedInstagramUrl = String(config?.instagramUrl ?? "").trim();
   const legacyInstagramUrl = "https://www.instagram.com/bodegaciudadevita/";
 
   return {
     businessName: DEFAULT_STORE_CONFIG.businessName,
     whatsappNumber:
-      String(config?.whatsappNumber ?? "").replace(/\s+/g, "").trim() || DEFAULT_STORE_CONFIG.whatsappNumber,
+      !savedWhatsappNumber || ["5491100000000", "5491122334455"].includes(savedWhatsappNumber)
+        ? DEFAULT_STORE_CONFIG.whatsappNumber
+        : savedWhatsappNumber,
     instagramUrl:
       savedInstagramUrl === legacyInstagramUrl
         ? DEFAULT_STORE_CONFIG.instagramUrl
